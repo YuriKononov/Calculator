@@ -5,12 +5,110 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Calculator.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="HeightRequest" Value="58"></Setter>
+                <Setter Property="WidthRequest" Value="58"></Setter>
+                <Setter Property="BorderColor" Value="Black"></Setter>
+                <Setter Property="BorderWidth" Value="2"></Setter>
+                <Setter Property="CornerRadius" Value="58"></Setter>
+            </Style>
+            <Style x:Key="buttonClsStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="HeightRequest" Value="58"></Setter>
+                <Setter Property="WidthRequest" Value="58"></Setter>
+                <Setter Property="BorderColor" Value="Black"></Setter>
+                <Setter Property="BorderWidth" Value="2"></Setter>
+                <Setter Property="CornerRadius" Value="58"></Setter>
+                <Setter Property="BackgroundColor" Value="#FFFF4600"></Setter>
+            </Style>
+            <Style x:Key="buttonFuncStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="HeightRequest" Value="58"></Setter>
+                <Setter Property="WidthRequest" Value="58"></Setter>
+                <Setter Property="BorderColor" Value="Black"></Setter>
+                <Setter Property="BorderWidth" Value="2"></Setter>
+                <Setter Property="CornerRadius" Value="58"></Setter>
+                <Setter Property="BackgroundColor" Value="#FF68D7FD"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout>
+    <StackLayout Padding="10">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Switch Toggled="OnToggled"/>
+
+        <Label x:Name="Output" HeightRequest="170" FontSize="36" LineBreakMode="WordWrap" MaxLines="4" TextColor="Black"></Label>
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnE" Grid.Column="1" Grid.Row="0" Text = "=" HeightRequest="58" FontSize="Large" Clicked="OnEqClicked" BackgroundColor="#FFA500" BorderColor="Black" BorderWidth="2" CornerRadius="58"></Button>
+            <Button x:Name="btnDel" Text = "C" Grid.Column="0" Grid.Row="0" Clicked="OnButtonDelClicked" Style="{StaticResource buttonClsStyle}"></Button>
+            <Button x:Name="btnDeleteOne" Text = "Del" Grid.Column="2" Grid.Row="0" Clicked="OnButtonDeletionClicked" Style="{StaticResource buttonClsStyle}"></Button>
+        </Grid>
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btn1" Text = "1" Grid.Column="0" Grid.Row="0" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn2" Text = "2" Grid.Column="1" Grid.Row="0" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn3" Text = "3" Grid.Column="2" Grid.Row="0" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+
+            <Button x:Name="btn4" Text = "4" Grid.Column="0" Grid.Row="1" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn5" Text = "5" Grid.Column="1" Grid.Row="1" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn6" Text = "6" Grid.Column="2" Grid.Row="1" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+
+            <Button x:Name="btn7" Text = "7" Grid.Column="0" Grid.Row="2" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn8" Text = "8" Grid.Column="1" Grid.Row="2" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btn9" Text = "9" Grid.Column="2" Grid.Row="2" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+
+            <Button x:Name="btn0" Text = "0" Grid.Column="1" Grid.Row="3" Clicked="OnButtonClicked" Style="{StaticResource buttonStyle}"></Button>
+            <Button x:Name="btnS" Text = "+" Grid.Column="0" Grid.Row="3" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+            <Button x:Name="btnM" Text = "-" Grid.Column="2" Grid.Row="3" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+
+            <Button x:Name="btnU" Text = "*" Grid.Column="0" Grid.Row="4" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+            <Button x:Name="btnR" Text = "/" Grid.Column="2" Grid.Row="4" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+            <Button x:Name="btnP" Text = "," Grid.Column="1" Grid.Row="4" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+
+            <Button x:Name="btnLeft" Text = "(" Grid.Column="0" Grid.Row="5" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+            <Button x:Name="btnRight" Text = ")" Grid.Column="2" Grid.Row="5" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+            <Button x:Name="btnSignChange" Text = "MOD" Grid.Column="1" Grid.Row="5" Clicked="OnButtonClicked" Style="{StaticResource buttonFuncStyle}"></Button>
+
+
+
+        </Grid>
+
+
+
+
+
+
+
     </StackLayout>
 
 </ContentPage>
