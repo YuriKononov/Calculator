@@ -7,3 +7,8 @@ D:\Projects MS\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calcula
 D:\Projects MS\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.dll
 D:\Projects MS\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\ref\Calculator.dll
 D:\Projects MS\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\Calculator.pdb
+D:\Projects MS\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Calculator.deps.json
+D:\Projects MS\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Calculator.dll
+D:\Projects MS\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\ref\Calculator.dll
+D:\Projects MS\Calculator\Calculator\Calculator\bin\Debug\netstandard2.0\Calculator.pdb
+D:\Projects MS\Calculator\Calculator\Calculator\obj\Debug\netstandard2.0\XamlC.stamp

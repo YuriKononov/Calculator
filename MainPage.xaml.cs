@@ -63,8 +63,21 @@ namespace Calculator
             }
 
         }
-        
-        
+
+        private void OnToggled(object sender, ToggledEventArgs e)
+        {
+            Switch switcher = (Switch)sender;
+            if (switcher.IsToggled == true)
+            {
+                BackgroundColor = Color.Black;
+                Output.TextColor = Color.White;
+            }
+            else
+            {
+                BackgroundColor = Color.White;
+                Output.TextColor = Color.Black;
+            }
+        }
 
 
     }
